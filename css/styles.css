@@ -175,8 +175,7 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.2; }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
 
 /* ═══════════════ PAGE SECTIONS ═══════════════ */
-.page { display: none; }
-.page.active { display: block; }
+/* Multi-page site: no SPA show/hide needed */
 
 /* ═══════════════ HERO — FULL-SCREEN BACKGROUND ═══════════════ */
 .hero {
