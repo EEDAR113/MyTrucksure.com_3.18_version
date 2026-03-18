@@ -361,65 +361,7 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
-<script>
-/* ── Fallback: if main.js fails to load or doesn't handle .reveal, ensure content is visible ── */
-(function(){
-  /* Give main.js 800ms to initialise; if .reveal items are still invisible, force-show them */
-  setTimeout(function(){
-    var items = document.querySelectorAll('.reveal');
-    if(!items.length) return;
-    /* Check if the first reveal element is still invisible */
-    var first = items[0];
-    var style = window.getComputedStyle(first);
-    if(style.opacity === '0' || style.visibility === 'hidden'){
-      for(var i=0; i<items.length; i++){
-        items[i].style.opacity = '1';
-        items[i].style.transform = 'none';
-        items[i].style.visibility = 'visible';
-        items[i].classList.add('active');
-      }
-    }
-  }, 800);
-
-  /* Also set up an IntersectionObserver as a safety net for scroll-reveal */
-  if('IntersectionObserver' in window){
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('active');
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'none';
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
-  }
-})();
-</script>
-
-<!-- Mobile hamburger toggle (fallback if not in main.js) -->
-<script>
-function toggleMenu(){
-  var links = document.getElementById('navLinks');
-  var ham = document.getElementById('hamburger');
-  if(links){ links.classList.toggle('open'); }
-  if(ham){ ham.classList.toggle('active'); }
-}
-</script>
-
-<!-- Navbar scroll effect -->
-<script>
-(function(){
-  var navbar = document.getElementById('navbar');
-  if(!navbar) return;
-  window.addEventListener('scroll', function(){
-    if(window.scrollY > 60) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
-  });
-})();
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
